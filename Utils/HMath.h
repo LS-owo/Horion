@@ -504,10 +504,10 @@ struct glmatrixf {
 	vec3_t WorldToScreen(vec3_t pos, int width, int height) {
 		//Matrix-vector Product, multiplying world(eye) coordinates by projection matrix = clipCoords
 		vec4_t clipCoords;
-		clipCoords.x = pos.x * v[0] + pos.y * v[4] + pos.z * v[8] + v[12];
-		clipCoords.y = pos.x * v[1] + pos.y * v[5] + pos.z * v[9] + v[13];
-		clipCoords.z = pos.x * v[2] + pos.y * v[6] + pos.z * v[10] + v[14];
-		clipCoords.w = pos.x * v[3] + pos.y * v[7] + pos.z * v[11] + v[15];
+		clipCoords.x = pos.x * v[1] + pos.y * v[5] + pos.z * v[9] + v[13];
+		clipCoords.y = pos.x * v[2] + pos.y * v[6] + pos.z * v[10] + v[14];
+		clipCoords.z = pos.x * v[3] + pos.y * v[7] + pos.z * v[11] + v[15];
+		clipCoords.w = pos.x * v[4] + pos.y * v[8] + pos.z * v[12] + v[16];
 
 		//perspective division, dividing by clip.W = Normalized Device Coordinates
 		vec3_t NDC;
